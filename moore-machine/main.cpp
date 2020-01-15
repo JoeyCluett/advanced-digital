@@ -3,6 +3,12 @@
 
 using namespace std;
 
+/*
+    Output 1 if
+        1.) total no. of 1's received is ODD
+        2.) at least two consecutive 0's have been received
+*/
+
 int main(int argc, char* argv[]) {
 
     string input  = "1110101011100110101001001110101010011010";
