@@ -20,7 +20,12 @@ ghdl -a timing_generator.vhdl
 #ghdl -e testbenchlight
 #ghdl -r testbenchlight --stop-time=800ns --vcd=waveform.vcd
 
+# timing generator testbench
+#ghdl -a testbenchtimegen.vhdl
+#ghdl -e testbenchtimegen
+#ghdl -r testbenchtimegen --stop-time=800ns --vcd=waveform.vcd
+
 # lab 1 testbench
 ghdl -a testbenchlab1.vhdl
 ghdl -e testbenchlab1
-ghdl -r testbenchlab1 --stop-time=800ns --vcd=waveform.vcd
+ghdl -r testbenchlab1 --stop-time=1600ns --vcd=waveform.vcd

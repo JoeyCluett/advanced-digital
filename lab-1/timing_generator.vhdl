@@ -27,6 +27,9 @@ begin
     freqdiv: entity work.freq_divider(behav) 
         port map(config, clk, LC_Tick, freqreset);
 
+    freqreset <= not reset;
+    LC_Start <= Start;
+
     proc: process
     begin
         wait until clk='1';
@@ -40,21 +43,21 @@ begin
                 when 0 => -- reset state
 
                     if Start='1' then
-                        LC_Start <='1';
-                        freqreset <= '1';
+                        --LC_Start <='1';
+                        --freqreset <= '1';
                         state <= 1;
                     else
-                        LC_Start <='0';
-                        freqreset <= '0';
+                        --LC_Start <='0';
+                        --freqreset <= '0';
                     end if;
 
                 when 1 => -- wait for slave to finish
 
-                    LC_Start <= '0';-- should never last more than 1 (regular) clock cycle
+                    --LC_Start <= '0';-- should never last more than 1 (regular) clock cycle
 
                     if LC_DoneFeedBack='1' then
                         state <= 0;
-                        freqreset <= '0';
+                        --freqreset <= '0';
                     end if;
 
                 when others =>
