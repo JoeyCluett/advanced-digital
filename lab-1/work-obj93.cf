@@ -1,22 +1,22 @@
 v 4
-file . "timing_generator.vhdl" "fdb81744910a89d164f5f4cbc1177d08d0f32699" "20200210190236.904":
-  entity timing_generator at 1( 0) + 0 on 601;
-  architecture behav of timing_generator at 19( 605) + 0 on 602;
-file . "light_control.vhdl" "10db0bc1de77c8a1f3976b2dbbe28fcaf96cc89e" "20200210190236.896":
-  entity light_control at 1( 0) + 0 on 599;
-  architecture behav of light_control at 17( 394) + 0 on 600;
-file . "d_ff.vhdl" "bc46870454f380e37a21ab37c650211589330d6f" "20200210190236.877":
-  entity d_ff at 1( 0) + 0 on 595;
-  architecture basic_arch of d_ff at 9( 127) + 0 on 596;
-file . "freq_divider.vhdl" "f1acacc62b6cf931002e1a48b60287a84ddcfc9f" "20200210190236.887":
-  entity freq_divider at 1( 0) + 0 on 597;
-  architecture behav of freq_divider at 16( 306) + 0 on 598;
-file . "testbenchlight.vhdl" "1fd2ab5d486709dc73cb6e0af81d8f7b34fb6df0" "20200210040005.461":
-  entity testbenchlight at 1( 0) + 0 on 41;
-  architecture test_light_control of testbenchlight at 7( 97) + 0 on 42;
-file . "testbenchlab1.vhdl" "bc916dc2147075538c106b763d4b86ca5ed0b588" "20200210190236.916":
-  entity testbenchlab1 at 1( 0) + 0 on 603;
-  architecture test_lab_1 of testbenchlab1 at 11( 169) + 0 on 604;
 file . "testbenchtimegen.vhdl" "888898b8408195890bec09b517864fa97a75ec9f" "20200210183022.159":
   entity testbenchtimegen at 1( 0) + 0 on 409;
   architecture test_time_gen of testbenchtimegen at 8( 127) + 0 on 410;
+file . "testbenchlab1.vhdl" "bc916dc2147075538c106b763d4b86ca5ed0b588" "20200504010916.016":
+  entity testbenchlab1 at 1( 0) + 0 on 613;
+  architecture test_lab_1 of testbenchlab1 at 11( 169) + 0 on 614;
+file . "testbenchlight.vhdl" "1fd2ab5d486709dc73cb6e0af81d8f7b34fb6df0" "20200210040005.461":
+  entity testbenchlight at 1( 0) + 0 on 41;
+  architecture test_light_control of testbenchlight at 7( 97) + 0 on 42;
+file . "freq_divider.vhdl" "f1acacc62b6cf931002e1a48b60287a84ddcfc9f" "20200504010915.993":
+  entity freq_divider at 1( 0) + 0 on 607;
+  architecture behav of freq_divider at 16( 306) + 0 on 608;
+file . "d_ff.vhdl" "bc46870454f380e37a21ab37c650211589330d6f" "20200504010915.936":
+  entity d_ff at 1( 0) + 0 on 605;
+  architecture basic_arch of d_ff at 9( 127) + 0 on 606;
+file . "light_control.vhdl" "10db0bc1de77c8a1f3976b2dbbe28fcaf96cc89e" "20200504010916.003":
+  entity light_control at 1( 0) + 0 on 609;
+  architecture behav of light_control at 17( 394) + 0 on 610;
+file . "timing_generator.vhdl" "fdb81744910a89d164f5f4cbc1177d08d0f32699" "20200504010916.010":
+  entity timing_generator at 1( 0) + 0 on 611;
+  architecture behav of timing_generator at 19( 605) + 0 on 612;
