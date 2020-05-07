@@ -19,7 +19,9 @@ ghdl -a shift_register.vhdl # N-bit shift register
 ghdl -a multiplicand_generator.vhdl 
 ghdl -a booth_encoder.vhdl
 ghdl -a toplevel_accumulator.vhdl
-ghdl -a toplevel_datapath.vhdl # N-bit shift register
+ghdl -a toplevel_datapath.vhdl
+ghdl -a toplevel_control.vhdl
+ghdl -a toplevel.vhdl
 
 # =====================================
 # build the various testbenches
@@ -32,4 +34,6 @@ ghdl -a toplevel_datapath.vhdl # N-bit shift register
 #buildtestbench "testbench_shiftregister"
 #buildtestbench "testbench_accumulator"
 #buildtestbench "testbench_boothencoder"
-buildtestbench "toplevel"
+#buildtestbench "testbench_control"
+
+buildtestbench "testbench_toplevel"

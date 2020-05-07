@@ -17,7 +17,9 @@ entity toplevel_control is
 
         clock : in std_logic;
         reset : in std_logic;
-        start : in std_logic
+        start : in std_logic;
+
+        done : out std_logic
     );
 end entity toplevel_control;
 
@@ -55,7 +57,7 @@ begin
         if rising_edge(clock) then
 
             if reset = '1' then 
-                state = 0; 
+                state <= 0; 
 
                 sel_be_clk    <= '1';
                 sel_be_rdnsft <= '1'; -- read A
@@ -71,27 +73,42 @@ begin
             else
                 if state = 0 then
 
+
                     -- setup cycle
 
-                    if start='1' then
-                        state=1;
+                    if start='1' then -- wait for start
 
-                        sel_be_rdnsft <= '0'; -- shift A
-                        sel_mg_rdnsft <= '0'; -- shift B
-                        sel_acc_clear <= '0'; -- dont need to clear anymore
+                        state <= 1;
+
+                        --sel_be_rdnsft <= '0'; -- shift A
+                        --sel_mg_rdnsft <= '0'; -- shift B
+                        --sel_acc_clear <= '0'; -- dont need to clear anymore
+
+                        done <= '0';
 
                     end if;
 
                 elsif state <= 7 then
 
                     -- 8 computation cycles
-                    state := state + 1;
+                    state <= state + 1;
 
                 else
-                    -- wait for start signal
-                    state = 0;
+                    state <= 0;
+                    done <= '1';                    
+
+
                 end if;
             end if;
+
+        elsif falling_edge(clock) then
+
+            if state = 1 then
+                sel_be_rdnsft <= '0'; -- shift A
+                sel_mg_rdnsft <= '0'; -- shift B
+                sel_acc_clear <= '0'; -- dont need to clear anymore
+            end if;
+
         end if;
     end process;
 
